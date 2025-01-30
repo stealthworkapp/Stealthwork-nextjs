@@ -40,12 +40,12 @@ const FreeToolsComponent = () => (
     <h3 className="text-3xl font-bold mb-8 text-center">Free Tools</h3>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <ServiceCard
+      {/* <ServiceCard
         icon={MapPin}
         title="IP Location"
         description="Get detailed information about your current IP address and geolocation."
         link="/services/ip-location"
-      />
+      /> */}
       <ServiceCard
         icon={Activity}
         title="Internet Speed Test"

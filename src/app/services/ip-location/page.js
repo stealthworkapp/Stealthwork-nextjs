@@ -46,11 +46,11 @@ const IPLocationMap = () => {
     });
 
     // Set browser info
-    setBrowserInfo({
-      platform: window.navigator.platform,
-      userAgent: window.navigator.userAgent,
-      screenSize: `${window.screen.width}px X ${window.screen.height}px`,
-    });
+    // setBrowserInfo({
+    //   platform: window.navigator.platform,
+    //   userAgent: window.navigator.userAgent,
+    //   screenSize: `${window.screen.width}px X ${window.screen.height}px`
+    // });
   }, []);
 
   useEffect(() => {
@@ -83,7 +83,7 @@ const IPLocationMap = () => {
 
   return (
     <div className="p-8 pt-32 bg-black text-white">
-      <div className="bg-gray-800 rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
+      {/* <div className="bg-gray-800 rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
         <h1 className="text-2xl font-bold mb-6 text-blue-400">
           IP Address Details
         </h1>
@@ -135,6 +135,7 @@ const IPLocationMap = () => {
             </div>
           </div>
         )}
+
         {ipInfo && (
           <div className="h-64 mb-6 inset-0 z-0">
             <MapContainer
@@ -146,14 +147,13 @@ const IPLocationMap = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               />
-              
               <Marker position={[ipInfo.latitude, ipInfo.longitude]}>
                 <Popup>The location used by your internet provider</Popup>
               </Marker>
             </MapContainer>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
