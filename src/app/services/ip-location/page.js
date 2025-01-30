@@ -1,49 +1,49 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import React from "react";
+// import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGlobe,
-  faMapMarkerAlt,
-  faServer,
-  faBuilding,
-  faNetworkWired,
-  faDesktop,
-  faExpandArrowsAlt,
-  faCode,
-  faCookie,
-} from "@fortawesome/free-solid-svg-icons";
-import LoadingCircle from "@/components/LoadingCircle";
+// import L from "leaflet";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faGlobe,
+//   faMapMarkerAlt,
+//   faServer,
+//   faBuilding,
+//   faNetworkWired,
+//   faDesktop,
+//   faExpandArrowsAlt,
+//   faCode,
+//   faCookie,
+// } from "@fortawesome/free-solid-svg-icons";
+// import LoadingCircle from "@/components/LoadingCircle";
 
 // Move all marker icon setup into useEffect
-const InfoItem = ({ icon, label, value }) => (
-  <div className="flex items-center mb-2">
-    <FontAwesomeIcon icon={icon} className="text-blue-400 mr-2" />
-    <span className="font-semibold mr-2">{label}:</span>
-    <span>{value}</span>
-  </div>
-);
+// const InfoItem = ({ icon, label, value }) => (
+//   <div className="flex items-center mb-2">
+//     <FontAwesomeIcon icon={icon} className="text-blue-400 mr-2" />
+//     <span className="font-semibold mr-2">{label}:</span>
+//     <span>{value}</span>
+//   </div>
+// );
 
 const IPLocationMap = () => {
-  const [ipInfo, setIpInfo] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [browserInfo, setBrowserInfo] = useState({
-    platform: "",
-    userAgent: "",
-    screenSize: "",
-  });
+  // const [ipInfo, setIpInfo] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
+  // const [browserInfo, setBrowserInfo] = useState({
+  //   platform: "",
+  //   userAgent: "",
+  //   screenSize: "",
+  // });
 
-  useEffect(() => {
+  // useEffect(() => {
     // Set up marker icons
-    delete L.Icon.Default.prototype._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-      iconUrl: require("leaflet/dist/images/marker-icon.png"),
-      shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-    });
+    // delete L.Icon.Default.prototype._getIconUrl;
+    // L.Icon.Default.mergeOptions({
+    //   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+    //   iconUrl: require("leaflet/dist/images/marker-icon.png"),
+    //   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+    // });
 
     // Set browser info
     // setBrowserInfo({
@@ -51,35 +51,35 @@ const IPLocationMap = () => {
     //   userAgent: window.navigator.userAgent,
     //   screenSize: `${window.screen.width}px X ${window.screen.height}px`
     // });
-  }, []);
+  // }, []);
 
-  useEffect(() => {
-    fetch("https://ipapi.co/json/")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch IP information");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setIpInfo(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://ipapi.co/json/")
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch IP information");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setIpInfo(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       setError(err.message);
+  //       setLoading(false);
+  //     });
+  // }, []);
 
-  if (loading) {
-    return <LoadingCircle />;
-  }
+  // if (loading) {
+  //   return <LoadingCircle />;
+  // }
 
-  if (error) {
-    return (
-      <div className="text-center p-8 pt-32 text-red-500">Error: {error}</div>
-    );
-  }
+  // if (error) {
+  //   return (
+  //     <div className="text-center p-8 pt-32 text-red-500">Error: {error}</div>
+  //   );
+  // }
 
   return (
     <div className="p-8 pt-32 bg-black text-white">
