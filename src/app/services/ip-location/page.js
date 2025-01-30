@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -17,14 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import LoadingCircle from "@/components/LoadingCircle";
 
-// Fix for default marker icon
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-});
-
+// Move all marker icon setup into useEffect
 const InfoItem = ({ icon, label, value }) => (
   <div className="flex items-center mb-2">
     <FontAwesomeIcon icon={icon} className="text-blue-400 mr-2" />
@@ -37,6 +30,28 @@ const IPLocationMap = () => {
   const [ipInfo, setIpInfo] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [browserInfo, setBrowserInfo] = useState({
+    platform: "",
+    userAgent: "",
+    screenSize: "",
+  });
+
+  useEffect(() => {
+    // Set up marker icons
+    delete L.Icon.Default.prototype._getIconUrl;
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+      iconUrl: require("leaflet/dist/images/marker-icon.png"),
+      shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+    });
+
+    // Set browser info
+    setBrowserInfo({
+      platform: window.navigator.platform,
+      userAgent: window.navigator.userAgent,
+      screenSize: `${window.screen.width}px X ${window.screen.height}px`,
+    });
+  }, []);
 
   useEffect(() => {
     fetch("https://ipapi.co/json/")
@@ -100,7 +115,7 @@ const IPLocationMap = () => {
               <InfoItem
                 icon={faDesktop}
                 label="Platform"
-                value={navigator.platform}
+                value={browserInfo.platform}
               />
             </div>
             <div>
@@ -108,26 +123,18 @@ const IPLocationMap = () => {
               <InfoItem
                 icon={faGlobe}
                 label="Browser"
-                value={navigator.userAgent}
+                value={browserInfo.userAgent}
               />
               <InfoItem
                 icon={faExpandArrowsAlt}
                 label="Screen Size"
-                value={`${window.screen.width}px X ${window.screen.height}px`}
+                value={browserInfo.screenSize}
               />
               <InfoItem icon={faCode} label="JavaScript" value="Enabled" />
               <InfoItem icon={faCookie} label="Cookie" value="Enabled" />
             </div>
           </div>
         )}
-        {/* 
-        <a
-          href="#"
-          className="text-blue-400 hover:text-blue-300 mb-6 inline-block"
-        >
-          Show more IP details
-        </a> */}
-
         {ipInfo && (
           <div className="h-64 mb-6 inset-0 z-0">
             <MapContainer
@@ -139,22 +146,13 @@ const IPLocationMap = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               />
+              
               <Marker position={[ipInfo.latitude, ipInfo.longitude]}>
                 <Popup>The location used by your internet provider</Popup>
               </Marker>
             </MapContainer>
           </div>
         )}
-
-        {/* add support for vpn subscriptions and any other paid service  */}
-        {/* <div className="flex flex-col sm:flex-row gap-4">
-          <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded flex-1">
-            Hide my IP Address
-          </button>
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded flex-1">
-            Protect my Privacy with Proxy
-          </button>
-        </div> */}
       </div>
     </div>
   );
