@@ -1,0 +1,59 @@
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 9999; /* Ensure it's on top of other elements */
+}
+.loading-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #707070;
+}
+.loading-circle::before,
+.loading-circle::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  border-radius: 50%;
+  opacity: 0.9;
+  background-image: radial-gradient(circle at center center, #2f2f2f, #707070),
+    repeating-radial-gradient(
+      circle at center center,
+      #2f2f2f,
+      #2f2f2f,
+      11px,
+      transparent 22px,
+      transparent 11px
+    );
+  background-blend-mode: multiply;
+  animation: pulse 2s ease-in-out infinite;
+}
+.loading-circle::after {
+  animation-delay: -1s;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}

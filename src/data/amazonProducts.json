@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "GL.iNet GL-AXT1800 (Slate AX) Pocket-Sized Wi-Fi 6 Gigabit Travel Router, Extender/Repeater for Hotel&Public Network Storage, VPN Client&Server, OpenWrt, Adguard Home, USB 3.0, TF Card Slot",
+      "imageUrl": "https://m.media-amazon.com/images/I/41cbb5DMUhL._AC_SX679_.jpg",
+      "productUrl": "https://amzn.to/4gSqi31",
+      "featured": true,
+      "productType": "tech"
+    },
+    {
+      "id": 2,
+      "name": "GL.iNet GL-MT3000 (Beryl AX) Pocket-Sized Wi-Fi 6 Wireless Travel Gigabit Router | WiFi Router | OpenVPN, Wireguard, Connect to Public & Hotel Wi-Fi login Page, RV",
+      "imageUrl": "https://m.media-amazon.com/images/I/41IiLQJghoL._AC_SX679_.jpg",
+      "productUrl": "https://amzn.to/4fVPVOP",
+      "featured": true,
+      "productType": "tech"
+    },
+    {
+      "id": 3,
+      "name": "GL.iNet GL-SFT1200 (Opal) Secure Travel WiFi Router, AC1200 Dual Band Gigabit Ethernet Wireless Network, IPv6 USB 2.0 MU-MIMO DDR3, 128MB Ram Repeater Bridge Access Point Mode, Router for Public Use",
+      "imageUrl": "https://m.media-amazon.com/images/I/41yDlYxsHAL._AC_SL1000_.jpg",
+      "productUrl": "https://amzn.to/3CJ06Ie",
+      "featured": true,
+      "productType": "tech"
+    },
+    {
+      "id": 6,
+      "name": "GL.iNet GL-AX1800(Flint) WiFi 6 Router -Dual Band Gigabit Wireless Internet Router | 5 x 1G Ethernet Ports | Up to 120 Devices | OpenVpn&WireGuard",
+      "imageUrl": "https://m.media-amazon.com/images/I/41YJcGHPRAL._AC_SX679_.jpg",
+      "productUrl": "https://amzn.to/4exxdgw",
+      "featured": true,
+      "productType": "tech"
+    },
+    {
+      "id": 4,
+      "name": "GL.iNet GL-MT6000(Flint 2) WiFi 6 Router | Gaming WiFi Router | 2 x 2.5G Multi-Gig Port+4 x 1G Ethernet Ports | Mass Device Connectivity | Rapid OpenVpn & WireGuard | 802.11ax | Long Range Coverage",
+      "imageUrl": "https://m.media-amazon.com/images/I/51CImYagh1L._AC_SX679_.jpg",
+      "productUrl": "https://amzn.to/3Y7Z0yg",
+      "featured": true,
+      "productType": "tech"
+    },
+    {
+      "id": 5,
+      "name": "Cracking the Coding Interview: 189 Programming Questions and Solutions (Cracking the Interview & Career)",
+      "imageUrl": "https://m.media-amazon.com/images/I/61mIq2iJUXL._SY522_.jpg",
+      "productUrl": "https://amzn.to/47RLHoM",
+      "featured": false,
+      "productType": "books"
+    },
+    {
+      "id": 7,
+      "name": "Cracking the PM Interview: How to Land a Product Manager Job in Technology (Cracking the Interview & Career)",
+      "imageUrl": "https://m.media-amazon.com/images/I/61lpVd2HzXL._SY522_.jpg",
+      "productUrl": "https://amzn.to/3TScpI6",
+      "featured": false,
+      "productType": "books"
+    }
+  ]
+}
