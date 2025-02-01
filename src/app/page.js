@@ -33,15 +33,9 @@ export default function Home() {
     );
   };
   return (
-    <div className="text-center p-8 pt-32 bg-black text-white">
+    <div className="text-center p-8 pt-20 bg-black text-white">
       <div className="banner">
-        <div className="content">
-          <ResponsiveBanner />
-          {/* <SetmoreBooking
-            className="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300"
-            content="Book a Consultation"
-          /> */}
-        </div>
+         <ResponsiveBanner />
       </div>
       <FeaturedProducts />
       <RecentArticles />
