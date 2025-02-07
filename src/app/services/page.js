@@ -9,6 +9,7 @@ import {
   Search,
   MapPin,
   Activity,
+  Image,
 } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 
@@ -51,6 +52,12 @@ const FreeToolsComponent = () => (
         title="Internet Speed Test"
         description="Measure your internet connection's speed and performance with our comprehensive test."
         link="/services/speedtest"
+      />
+            <ServiceCard
+        icon={Image}
+        title="Image Watermark"
+        description="Add customizable watermarks to your images. Protect your intellectual property with text overlays."
+        link="/services/watermark"
       />
     </div>
   </section>
