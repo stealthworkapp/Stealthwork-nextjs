@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import {
   Shield,
@@ -53,11 +53,17 @@ const FreeToolsComponent = () => (
         description="Measure your internet connection's speed and performance with our comprehensive test."
         link="/services/speedtest"
       />
-            <ServiceCard
+      <ServiceCard
         icon={Image}
         title="Image Watermark"
         description="Add customizable watermarks to your images. Protect your intellectual property with text overlays."
         link="/services/watermark"
+      />
+      <ServiceCard
+        icon={Image}
+        title="Image Upscale"
+        description="Upscale images"
+        link="/services/upscaler"
       />
     </div>
   </section>
