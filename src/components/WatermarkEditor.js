@@ -440,7 +440,7 @@ const WatermarkEditor = () => {
                       updateSetting("fontSize", Number(e.target.value))
                     }
                     min="12"
-                    max="72"
+                    max="200"
                     step="2"
                     className="w-full"
                   />
