@@ -116,8 +116,8 @@ export async function POST(req) {
 
     // **Modify the URLs to point to your custom API for downloading**
     const downloadUrls = sources.map((src, index) => {
-      // return src;
-      return `${BASE_URL}/api/download?url=${encodeURIComponent(src)}`;
+      return src;
+      // return `${BASE_URL}/api/download?url=${encodeURIComponent(src)}`;
     });
 
     return new Response(
