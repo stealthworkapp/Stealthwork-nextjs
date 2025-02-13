@@ -74,7 +74,12 @@ export async function POST(req) {
         const API_URL = `https://api22-normal-c-alisg.tiktokv.com/aweme/v1/feed/?aweme_id=${idVideo}`;
         const request = await fetch(API_URL, {
           method: "GET",
-          headers: { "User-Agent": "okhttp/3.10.0.1" },
+          headers: {
+            "User-Agent": "okhttp/3.10.0.1",
+            "Cache-Control": "no-cache, no-store, must-revalidate",
+            Pragma: "no-cache",
+            Expires: "0",
+          },
         });
 
         const data = await request.json();
@@ -111,6 +116,7 @@ export async function POST(req) {
 
     // **Modify the URLs to point to your custom API for downloading**
     const downloadUrls = sources.map((src, index) => {
+      // return src;
       return `${BASE_URL}/api/download?url=${encodeURIComponent(src)}`;
     });
 
@@ -136,7 +142,10 @@ export async function POST(req) {
       }),
       {
         status: 500,
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+        },
       }
     );
   }
