@@ -52,7 +52,7 @@ const TikTokDownloader = () => {
       if (data.sources && data.sources.length > 0) {
         console.log(`Video sources retrieved via ${data.method}`);
         setVideoSources(data.sources);
-        data.cleanUrl && setCleanUrl(data.cleanUrl)
+        data.cleanUrl && setCleanUrl(data.cleanUrl);
       } else {
         throw new Error("No video sources found");
       }
@@ -95,14 +95,18 @@ const TikTokDownloader = () => {
                 href={`${
                   videoSources[videoSources.length - 1]
                 }&filename=stealthwork_video.mp4`}
-                download
+                target="_blank" // Force open in new tab
+                rel="noopener noreferrer"
+                download="stealthwork_video.mp4"
                 className="block w-full px-4 py-2 text-center text-white bg-blue-400 rounded-lg hover:bg-blue-300"
               >
                 Download
               </a>
               <a
                 href={`${videoSources[0]}&filename=stealthwork_video_HD.mp4`}
-                download
+                target="_blank" // Force open in new tab
+                rel="noopener noreferrer"
+                download="stealthwork_video_HD.mp4"
                 className="block w-full px-4 py-2 text-center text-white bg-blue-700 rounded-lg hover:bg-blue-600"
               >
                 Download in HD

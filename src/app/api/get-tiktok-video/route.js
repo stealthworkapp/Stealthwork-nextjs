@@ -1,6 +1,6 @@
 import SnapTikClient from "@/utils/SnapTikClient";
 
-const BASE_URL = "http://stealthwork.app"; // Your actual domain
+const BASE_URL = "https://stealthwork.app"; // Your actual domain
 
 // Function to resolve TikTok redirect URLs
 const resolveTikTokRedirect = async (shortUrl) => {
