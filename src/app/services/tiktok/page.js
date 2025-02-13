@@ -84,7 +84,7 @@ const TikTokDownloader = () => {
       </h2>
       <div className="">
         <p className="text-gray-300 mb-8 text-center">
-          Download tiktok videos with out watermark and in HD
+          Download tiktok videos without watermark and in HD
         </p>
         {/* Download Buttons and Embedded Video Container */}
         {videoSources.length > 0 ? (
