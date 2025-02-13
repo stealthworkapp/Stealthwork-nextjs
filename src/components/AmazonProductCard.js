@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image";
 const AmazonProductCard = ({ product }) => {
   // Destructure product properties for easier access
   const { name, imageUrl, productUrl } = product;

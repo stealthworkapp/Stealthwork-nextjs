@@ -1,6 +1,6 @@
 import SnapTikClient from "@/utils/SnapTikClient";
 
-const BASE_URL = "http://localhost:3000"; // Your actual domain
+const BASE_URL = "http://stealthwork.app"; // Your actual domain
 
 export async function POST(req) {
   try {
@@ -17,15 +17,15 @@ export async function POST(req) {
       const snapData = await snaptik.process(url);
 
       if (snapData?.data?.sources?.length > 0) {
-        console.log("SnapTik Success: No-watermark video retrieved.");
+        console.log("StealthTik Success: No-watermark video retrieved.");
         sources = snapData.data.sources.map((res) => res.url);
-        method = "SnapTik";
+        method = "StealthTik";
       }
     } catch (snapError) {
-      console.error("SnapTik Failed:", snapError.message);
+      console.error("StealthTik Failed:", snapError.message);
     }
 
-    // **Fallback to TikTok API if SnapTik fails**
+    // **Fallback to TikTok API if StealthTik fails**
     if (sources.length === 0) {
       console.log("Falling back to TikTok API...");
 

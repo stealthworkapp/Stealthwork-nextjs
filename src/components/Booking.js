@@ -225,7 +225,7 @@ const Booking = () => {
   return (
     <div className="p-8 pt-32 bg-gray-900 text-gray-100">
       <h2 className="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-        Book a Consultation
+        Book a Call
       </h2>
 
       {authError ? (

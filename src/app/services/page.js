@@ -10,6 +10,8 @@ import {
   MapPin,
   Activity,
   Image,
+  ArrowUpCircle,
+  Video,
 } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 
@@ -60,10 +62,16 @@ const FreeToolsComponent = () => (
         link="/services/watermark"
       />
       <ServiceCard
-        icon={Image}
+        icon={ArrowUpCircle}
         title="Image Upscale"
         description="Increase the resolution of AI-generated images while preserving quality and details. Perfect for enhancing digital artwork and renders."
         link="/services/upscaler"
+      />
+      <ServiceCard
+        icon={Video}
+        title="StealthTik"
+        description="Download TikTok videos in high quality without watermarks. Save and share your favorite content while maintaining original video quality and audio sync."
+        link="/services/stealthtik"
       />
     </div>
   </section>

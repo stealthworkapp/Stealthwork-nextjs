@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import LoadingCircle from "./LoadingCircle";
 
 const CompactReviewCard = ({ review }) => {
   return (
@@ -63,11 +64,7 @@ export default function ReviewsCarousel() {
   }, [data]);
 
   if (loading) {
-    return (
-      <div className="min-h-[300px] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500" />
-      </div>
-    );
+    return <LoadingCircle />;
   }
 
   if (error || !data?.reviews?.items?.length) {

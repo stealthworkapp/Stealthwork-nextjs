@@ -2,9 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 const TikTokDownloader = () => {
-  const [inputUrl, setInputUrl] = useState(
-    "https://www.tiktok.com/@maegyi71/video/7469641427270749441?is_from_webapp=1&sender_device=pc"
-  );
+  const [inputUrl, setInputUrl] = useState("");
   const [videoSources, setVideoSources] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");

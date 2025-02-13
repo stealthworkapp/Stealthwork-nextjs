@@ -1,8 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-// import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import dynamic from "next/dynamic"; // Prevent SSR issues with Leaflet
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGlobe,
@@ -17,7 +16,23 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import LoadingCircle from "@/components/LoadingCircle";
 
-// Move all marker icon setup into useEffect
+// Dynamically import Leaflet (Only load on client side)
+const MapContainer = dynamic(
+  () => import("react-leaflet").then((mod) => mod.MapContainer),
+  { ssr: false }
+);
+const TileLayer = dynamic(
+  () => import("react-leaflet").then((mod) => mod.TileLayer),
+  { ssr: false }
+);
+const Marker = dynamic(
+  () => import("react-leaflet").then((mod) => mod.Marker),
+  { ssr: false }
+);
+const Popup = dynamic(() => import("react-leaflet").then((mod) => mod.Popup), {
+  ssr: false,
+});
+
 const InfoItem = ({ icon, label, value }) => (
   <div className="flex items-center mb-2">
     <FontAwesomeIcon icon={icon} className="text-blue-400 mr-2" />
@@ -37,20 +52,22 @@ const IPLocationMap = () => {
   });
 
   useEffect(() => {
-    // Set up marker icons
-    delete L.Icon.Default.prototype._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-      iconUrl: require("leaflet/dist/images/marker-icon.png"),
-      shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-    });
+    if (typeof window !== "undefined") {
+      import("leaflet").then((L) => {
+        delete L.Icon.Default.prototype._getIconUrl;
+        L.Icon.Default.mergeOptions({
+          iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+          iconUrl: require("leaflet/dist/images/marker-icon.png"),
+          shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+        });
+      });
 
-    // Set browser info
-    setBrowserInfo({
-      platform: window.navigator.platform,
-      userAgent: window.navigator.userAgent,
-      screenSize: `${window.screen.width}px X ${window.screen.height}px`,
-    });
+      setBrowserInfo({
+        platform: window.navigator.platform,
+        userAgent: window.navigator.userAgent,
+        screenSize: `${window.screen.width}px X ${window.screen.height}px`,
+      });
+    }
   }, []);
 
   useEffect(() => {
@@ -136,7 +153,7 @@ const IPLocationMap = () => {
           </div>
         )}
 
-        {/* {ipInfo && (
+        {ipInfo && (
           <div className="h-64 mb-6 inset-0 z-0">
             <MapContainer
               center={[ipInfo.latitude, ipInfo.longitude]}
@@ -152,7 +169,7 @@ const IPLocationMap = () => {
               </Marker>
             </MapContainer>
           </div>
-        )} */}
+        )}
       </div>
     </div>
   );

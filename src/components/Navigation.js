@@ -57,7 +57,7 @@ const Navigation = () => {
             </Link>
             <SetmoreBooking
               className="hover:text-gray-300 transition duration-300"
-              content="Book Consultation"
+              content="Book Call"
               onClick={useAnalyticsEventTracker("book")}
             />
           </div>
@@ -106,7 +106,7 @@ const Navigation = () => {
                 <li>
                   <SetmoreBooking
                     className="text-2xl hover:text-gray-300 transition duration-300"
-                    content="Book Consultation"
+                    content="Book Call"
                   />
                 </li>
               </ul>
