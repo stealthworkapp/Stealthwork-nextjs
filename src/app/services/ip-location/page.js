@@ -1,5 +1,5 @@
 "use client";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 // import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -49,7 +49,7 @@ const IPLocationMap = () => {
     setBrowserInfo({
       platform: window.navigator.platform,
       userAgent: window.navigator.userAgent,
-      screenSize: `${window.screen.width}px X ${window.screen.height}px`
+      screenSize: `${window.screen.width}px X ${window.screen.height}px`,
     });
   }, []);
 
@@ -83,11 +83,11 @@ const IPLocationMap = () => {
 
   return (
     <div className="p-8 pt-32 bg-black text-white">
-      <div className="bg-gray-800 rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
-        <h1 className="text-2xl font-bold mb-6 text-blue-400">
-          IP Address Details
-        </h1>
+      <h2 className="text-4xl font-bold mb-8 text-center">
+        IP Address Details
+      </h2>
 
+      <div className="bg-gray-800 rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
         {ipInfo && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>

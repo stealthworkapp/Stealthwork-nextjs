@@ -289,10 +289,10 @@ const ImageUpscaler = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-6">
+    <div className="max-w-4xl mx-auto p-6 space-y-6 pt-32">
       <div className="space-y-4">
-        <h2 className="text-2xl font-bold">Enhanced Image Upscaler</h2>
-        <p className="text-gray-600">
+        <h2 className="text-4xl font-bold mb-8 text-center">Enhanced Image Upscaler</h2>
+        <p className="text-gray-300 mb-8 text-center">
           Upload an image to upscale it with improved clarity
         </p>
 
