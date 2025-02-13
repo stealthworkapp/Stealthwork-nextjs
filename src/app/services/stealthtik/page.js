@@ -6,6 +6,7 @@ const TikTokDownloader = () => {
   const [videoSources, setVideoSources] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [cleanUrl, setCleanUrl] = useState("");
 
   // Add TikTok embed script when needed
   useEffect(() => {
@@ -51,6 +52,7 @@ const TikTokDownloader = () => {
       if (data.sources && data.sources.length > 0) {
         console.log(`Video sources retrieved via ${data.method}`);
         setVideoSources(data.sources);
+        data.cleanUrl && setCleanUrl(data.cleanUrl)
       } else {
         throw new Error("No video sources found");
       }
@@ -117,8 +119,8 @@ const TikTokDownloader = () => {
             <div className="mt-4 md:mt-0 mx-auto">
               <blockquote
                 className="tiktok-embed"
-                cite={inputUrl}
-                data-video-id={getVideoId(inputUrl)}
+                cite={cleanUrl}
+                data-video-id={getVideoId(cleanUrl)}
                 style={{
                   maxWidth: "325px",
                   minWidth: "325px",

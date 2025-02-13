@@ -2,10 +2,35 @@ import SnapTikClient from "@/utils/SnapTikClient";
 
 const BASE_URL = "http://stealthwork.app"; // Your actual domain
 
+// Function to resolve TikTok redirect URLs
+const resolveTikTokRedirect = async (shortUrl) => {
+  try {
+    const response = await fetch(shortUrl, {
+      method: "HEAD",
+      redirect: "follow",
+    });
+    return response.url.split("?")[0]; // Get clean URL without query params
+  } catch (error) {
+    console.error("Error resolving TikTok redirect:", error);
+    throw new Error("Failed to resolve TikTok URL");
+  }
+};
+
 export async function POST(req) {
   try {
-    const { url } = await req.json();
+    let { url } = await req.json();
     if (!url) throw new Error("URL is required");
+
+    // **If it's a TikTok short link, resolve it first**
+    if (url.includes("vt.tiktok.com/")) {
+      console.log("Resolving TikTok redirect URL...");
+      url = await resolveTikTokRedirect(url);
+      console.log("Resolved URL:", url);
+    }
+
+    // **Remove query parameters to get a clean URL**
+    url = url.split("?")[0];
+    console.log("Clean TikTok URL:", url);
 
     const snaptik = new SnapTikClient();
     let sources = [];
@@ -72,7 +97,6 @@ export async function POST(req) {
         }
 
         sources = allSources;
-        // method = "TikTok API";
       } catch (tiktokError) {
         console.error("TikTok API Failed:", tiktokError.message);
       }
@@ -87,16 +111,14 @@ export async function POST(req) {
 
     // **Modify the URLs to point to your custom API for downloading**
     const downloadUrls = sources.map((src, index) => {
-      return `${BASE_URL}/api/download?url=${encodeURIComponent(
-        src
-      )}`;
+      return `${BASE_URL}/api/download?url=${encodeURIComponent(src)}`;
     });
 
     return new Response(
       JSON.stringify({
         source: downloadUrls[0], // Best available source
         sources: downloadUrls, // All available sources
-        // method: method,
+        cleanUrl: url, // Clean TikTok URL (for embedding)
       }),
       {
         headers: {
