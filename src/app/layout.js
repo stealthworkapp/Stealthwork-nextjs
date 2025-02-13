@@ -35,6 +35,8 @@ export const metadata = {
     "SEO optimization",
     "secure remote workplace",
     "global content access",
+    "stealthtik",
+    "free tiktok download"
   ],
   openGraph: {
     type: "website",
