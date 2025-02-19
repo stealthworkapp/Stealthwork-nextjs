@@ -36,7 +36,7 @@ export const metadata = {
     "secure remote workplace",
     "global content access",
     "stealthtik",
-    "free tiktok download"
+    "free tiktok download",
   ],
   openGraph: {
     type: "website",
@@ -103,7 +103,7 @@ export default function RootLayout({ children }) {
         <main className="flex-grow">{children}</main>
         <footer className="bg-black p-4 text-center text-gray-500">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-left">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-left">
               <div>
                 <h3 className="text-white text-lg font-semibold mb-4">
                   VPN Solutions
@@ -134,9 +134,32 @@ export default function RootLayout({ children }) {
                   <li>SEO Services</li>
                 </ul>
               </div>
+              <div>
+                <h3 className="text-white text-lg font-semibold mb-4">
+                  Company
+                </h3>
+                <ul className="space-y-2">
+                  <li>
+                    <a
+                      href="/terms-of-service"
+                      className="text-gray-500 hover:text-gray-300 transition duration-300"
+                    >
+                      Terms of Service
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/privacy-policy"
+                      className="text-gray-500 hover:text-gray-300 transition duration-300"
+                    >
+                      Privacy Policy
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div className="border-t border-gray-800 pt-8">
-              © {new Date().getFullYear()} StealthWork. All rights reserved.
+            Copyright © {new Date().getFullYear()} StealthWork. All rights reserved.
             </div>
           </div>
         </footer>
