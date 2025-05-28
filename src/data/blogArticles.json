@@ -509,79 +509,89 @@
     },
     {
       "id": 7,
-      "urlName": "fundamentals-of-engineering-exam-japan",
-      "title": "Fundamentals of Engineering (FE) Exam: A Pathway to Engineering in Japan Without a Degree",
+      "urlName": "fundamental-it-engineer-exam-japan",
+      "title": "Fundamental Information Technology Engineer (FE) Exam: A Pathway to Engineering in Japan Without a Degree",
       "dateCreated": "2025-01-29",
       "author": "StealthWork Team",
       "topic": "Engineering Certification",
-      "summary": "Learn how passing the Fundamentals of Engineering (FE) exam can enable engineers to work in Japan without a traditional degree.",
-      "mainImage": "/images/fe-exam-japan.jpg",
+      "summary": "Learn how passing the Fundamental Information Technology Engineer (FE) exam—administered by PhilNITS under the ITPEC framework—can help you qualify for engineering work and visa points in Japan, even without a traditional degree.",
+      "mainImage": "https://i.imgur.com/NXitIw2.png",
       "content": [
         {
           "id": 1,
-          "title": "What is the Fundamentals of Engineering (FE) Exam?",
-          "paragraph": "The Fundamentals of Engineering (FE) exam is an internationally recognized certification designed for engineers seeking to establish their professional credentials. Administered by the National Council of Examiners for Engineering and Surveying (NCEES), it serves as the first step toward becoming a licensed Professional Engineer (PE).",
+          "title": "What Is the Fundamental Information Technology Engineer (FE) Exam?",
+          "paragraph": "The FE exam is a Level-2 certification in the IT Professionals Examination Council (ITPEC) scheme. It is coordinated by Japan’s Information-technology Promotion Agency (IPA) and delivered in English by national bodies such as the Philippine National IT Standards Foundation (PhilNITS). The credential attests to solid, broad-based knowledge of IT strategy, management, software, hardware, and networks.",
           "links": [
             {
-              "text": "NCEES Official Website",
-              "url": "https://ncees.org/engineering/fe/"
-            }
+              "text": "PhilNITS Official Website",
+              "url": "https://philnits.org/"
+            },
+            { "text": "ITPEC Overview", "url": "https://itpec.org/" }
           ]
         },
         {
           "id": 2,
-          "title": "Why is the FE Exam Important for Engineers in Japan?",
-          "paragraph": "In Japan, engineering positions typically require a university degree. However, the FE exam provides an alternative path for skilled engineers without formal degrees. By passing the FE exam, engineers can demonstrate their technical proficiency and qualify for employment in engineering roles within Japanese companies."
+          "title": "Why Does the ITPEC FE Matter for Working in Japan?",
+          "paragraph": "Japan’s Immigration Services Agency lists the FE certificate as one of the professional exams that (a) waive the usual requirement of a related bachelor’s degree or ten years’ experience for the Engineer/Specialist visa, and (b) grant extra points in the Highly-Skilled Professional visa system. In short, passing the FE can open the door to Japanese tech jobs even if you lack a university degree.",
+          "links": [
+            {
+              "text": "Immigration Services Agency Public Notice (資格外活動・高度人材ポイント対象試験)",
+              "url": "https://www.moj.go.jp/isa/policies/bill/nyukan_hourei_h09.html"
+            },
+            {
+              "text": "Points-Based Immigration Treatment (PDF)",
+              "url": "https://www.lb.emb-japan.go.jp/Points-Based-Immigration-Treatment.PDF"
+            }
+          ]
         },
         {
           "id": 3,
-          "title": "Eligibility Requirements for the FE Exam",
-          "paragraph": "Unlike traditional engineering degrees, the FE exam is open to individuals with relevant engineering knowledge and experience. While most examinees have an academic background in engineering, self-taught professionals and those with industry experience can also qualify to take the exam."
+          "title": "Eligibility Requirements",
+          "paragraph": "There is no formal degree prerequisite. The exam targets candidates who have basic but comprehensive IT knowledge—whether obtained through university study, vocational school, coding boot camps, or on-the-job experience."
         },
         {
           "id": 4,
-          "title": "How to Register for the FE Exam?",
-          "paragraph": "The FE exam is offered through the NCEES website, where candidates can create an account, register, and select a testing center. The exam is available year-round and can be taken at authorized Pearson VUE testing centers worldwide, including Japan. However, for English-language testing, candidates may need to take the exam in the Philippines, as it is one of the few countries offering the FE exam in English.",
+          "title": "How to Register (Philippines Example)",
+          "paragraph": "PhilNITS opens registration twice a year. Sign up on the PhilNITS website, pay the fee online or at accredited banks, and choose a testing site (typically Manila, Cebu, or Davao). The next English sessions are 26 Oct 2025, 26 Apr 2026, and 25 Oct 2026. Other ITPEC member countries follow the same dates.",
           "links": [
             {
-              "text": "NCEES Registration Portal",
-              "url": "https://account.ncees.org/login"
-            },
-            {
-              "text": "Pearson VUE Test Centers",
-              "url": "https://home.pearsonvue.com/ncees"
+              "text": "PhilNITS Exam Schedule & Registration",
+              "url": "https://philnits.org/exam-schedule"
             }
           ]
         },
         {
           "id": 5,
-          "title": "Exam Structure and Topics Covered",
-          "paragraph": "The FE exam consists of 110 multiple-choice questions covering fundamental engineering disciplines such as mathematics, ethics, mechanical systems, electrical circuits, and fluid mechanics. Candidates must complete the exam within a six-hour period.",
+          "title": "Exam Structure and Topics",
+          "paragraph": "Full-day paper exam (English):\n• AM Session – 90 minutes, 60 MCQs covering Technology, Strategy, Management\n• PM Session – 100 minutes, 20 scenario-based MCQs that dive deeper into the same domains",
           "links": [
             {
-              "text": "FE Exam Specifications",
-              "url": "https://ncees.org/engineering/fe-exam/"
+              "text": "Detailed Syllabus (PDF)",
+              "url": "https://philnits.org/docs/fe_syllabus.pdf"
             }
           ]
         },
         {
           "id": 6,
-          "title": "Countries Where the FE Exam Enables Employment Without a Degree",
-          "paragraph": "Passing the FE exam can qualify engineers for employment in various countries without requiring a traditional degree. In addition to Japan, countries such as the United States, Canada, and certain parts of the Middle East recognize the FE credential as a valid qualification for engineering roles. Candidates should verify specific employer and country requirements before applying."
+          "title": "Fees",
+          "paragraph": "Exam fee: ₱2,500  |  Removal (retake one failed part within a year): ₱1,200"
         },
         {
           "id": 7,
-          "title": "Challenges and Considerations",
-          "paragraph": "While the FE exam provides an alternative route to engineering careers in Japan, job seekers may still face challenges such as language barriers and visa requirements. It is recommended that candidates improve their Japanese language skills and research companies that recognize FE certification."
+          "title": "Recognition Outside Japan",
+          "paragraph": "The FE is accepted across the six ITPEC countries (Philippines, Thailand, Vietnam, Myanmar, Mongolia, Bangladesh) and acknowledged by many Japanese-affiliated employers throughout Asia."
         },
         {
           "id": 8,
+          "title": "Challenges and Tips",
+          "paragraph": "• Japanese language skill is still crucial for most jobs—aim for JLPT N3 or higher.\n• Collect proof of your FE certificate and any other ITPEC or IPA credentials when you apply for your visa.\n• Study resources: IPA’s past questions (Japanese) and PhilNITS review courses (English)."
+        },
+        {
+          "id": 9,
           "title": "Conclusion",
-          "paragraph": "The Fundamentals of Engineering (FE) exam is a viable path for engineers without a degree who wish to work in Japan. By earning this certification, candidates can enhance their employability and demonstrate their technical expertise to potential employers. Aspiring engineers should consider taking the FE exam to unlock new career opportunities in Japan."
+          "paragraph": "For self-taught developers and vocational-school graduates, the ITPEC FE offers a clear, affordable route to meet Japan’s visa requirements and prove industry-standard competence. Passing it is a smart first milestone on the road to an engineering career in Japan."
         }
       ]
     }
-    
-    
   ]
 }
